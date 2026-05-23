@@ -1,0 +1,24 @@
+# Supabase Python client (database + vector queries)
+supabase==2.9.1
+
+# OpenAI SDK (embeddings via text-embedding-3-small)
+openai==1.54.4
+
+# Anthropic SDK (Claude for answering questions)
+anthropic==0.39.0
+
+# PDF text extraction (works for digital-text PDFs)
+pypdf==5.1.0
+pdfplumber==0.11.4
+
+# OCR pipeline for scanned PDFs
+# NOTE: also requires Tesseract installed on the system + poppler for pdf2image.
+# Windows install instructions are in README.md.
+pytesseract==0.3.13
+pdf2image==1.17.0
+pillow==11.0.0
+
+# Utilities
+python-dotenv==1.0.1
+tqdm==4.67.1
+tiktoken==0.8.0

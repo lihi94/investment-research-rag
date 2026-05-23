@@ -1,0 +1,29 @@
+# Secrets — NEVER commit
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# PDFs and processed data — large and possibly copyrighted
+data/pdfs/
+data/cache/
+
+# Logs and run state
+logs/
+*.log
+.ingest_state.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

@@ -22,3 +22,6 @@ pillow==11.0.0
 python-dotenv==1.0.1
 tqdm==4.67.1
 tiktoken==0.8.0
+
+# For build_pdf.py (markdown -> HTML -> PDF via headless Edge)
+markdown==3.7

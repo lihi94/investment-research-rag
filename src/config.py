@@ -17,8 +17,10 @@ from dotenv import load_dotenv
 
 # Load .env from the project root. This searches upward from the current file,
 # so it works whether scripts are run from project root or from scripts/.
+# override=True so values in .env always win over inherited shell env vars —
+# otherwise an empty inherited variable (common on Windows) silently blocks .env.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env")
+load_dotenv(PROJECT_ROOT / ".env", override=True)
 
 
 @dataclass(frozen=True)

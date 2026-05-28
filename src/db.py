@@ -34,6 +34,11 @@ def find_source_by_hash(file_hash: str) -> dict | None:
     return res.data[0] if res.data else None
 
 
+def delete_source(source_id: str | UUID) -> None:
+    """Delete a source row (CASCADE removes its chunks). Used to clean up partial inserts."""
+    SB.table("sources").delete().eq("id", str(source_id)).execute()
+
+
 def insert_source(
     *,
     source_type: str,

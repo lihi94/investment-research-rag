@@ -167,9 +167,14 @@ def _ingest_letter(
     file_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
 
     existing = find_source_by_hash(file_hash)
-    if existing and existing.get("ingested_at"):
-        from src.db import count_chunks_for_source
-        return "skipped", count_chunks_for_source(existing["id"])
+    if existing:
+        if existing.get("ingested_at"):
+            from src.db import count_chunks_for_source
+            return "skipped", count_chunks_for_source(existing["id"])
+        else:
+            from src.db import delete_source
+            LOG.warning(f"Cleaning up partial source {existing['id']} for {title}")
+            delete_source(existing["id"])
 
     metadata = {
         "company": "Amazon",

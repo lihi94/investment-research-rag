@@ -15,6 +15,9 @@ env/
 # PDFs and processed data — large and possibly copyrighted
 data/pdfs/
 data/cache/
+# Curated channels: ignore the PDFs but keep README + .gitkeep
+data/curated/**/*.pdf
+data/curated/**/*.PDF
 
 # Logs and run state
 logs/
